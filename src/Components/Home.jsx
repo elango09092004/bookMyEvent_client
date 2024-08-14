@@ -1,10 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./Home.css";
+import NavBar from "./NavBar";
 
 const Home = () => {
     return (
-        <>
+        <>     <NavBar/>
             <div className="wholepage">
                 <div className="container">
                     <div className="text">
@@ -19,7 +20,7 @@ const Home = () => {
                 <div className="container">
                     <div className="text">
                         <h1>Plan And Organise Events with Less Effort</h1>
-                        <button><Link to="/signup">Organise Now</Link></button>
+                        <button><Link to="/addevent">Organise Now</Link></button>
                     </div>
                     <div className="images">
                         <img src="https://imgs.search.brave.com/zbrahzu4sfhtsxVoPVcKuElmWEG-fjcjwrflLLf2gZE/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly90My5m/dGNkbi5uZXQvanBn/LzAxLzIyLzgyLzcw/LzM2MF9GXzEyMjgy/NzA0NF9MU3h2V3JE/SFJTU3dFVEhtaE1i/b1V6ZGFueWp0Tk4y/WS5qcGc" alt="Event Planning" />

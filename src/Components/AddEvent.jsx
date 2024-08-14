@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "./AddEvent.css";
-
+import NavBar from "./NavBar";
 const AddEvent = () => {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
@@ -39,7 +39,7 @@ const AddEvent = () => {
     }
   };
 
-  return (
+  return (<>   <NavBar/>
     <div className="add-event">
       <h1>Add New Event</h1>
       <form onSubmit={handleSubmit} className="event-form">
@@ -113,7 +113,7 @@ const AddEvent = () => {
         <button type="submit" className="button">Add Event</button>
       </form>
       {message && <p className="message">{message}</p>}
-    </div>
+    </div></>
   );
 };
 

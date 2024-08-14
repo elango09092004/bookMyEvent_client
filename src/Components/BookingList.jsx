@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "./BookingList.css";
+import NavBar from "./NavBar";
 
 const BookingList = () => {
     const [bookings, setBookings] = useState([]);
@@ -23,7 +24,8 @@ const BookingList = () => {
         return <div className="error">{error}</div>;
     }
 
-    return (
+    return (<>   
+    <NavBar/>
         <div className="booking-list">
             <h1>My Bookings</h1>
             {bookings.length > 0 ? (
@@ -35,13 +37,14 @@ const BookingList = () => {
                             <p>Location: {booking.event.location}</p>
                             <p>Organizer: {booking.event.organizer}</p>
                             <p>Booked On: {new Date(booking.bookingdate).toLocaleDateString()}</p>
+                            <p>Price : {booking.ticketPricing}</p>
                         </li>
                     ))}
                 </ul>
             ) : (
                 <p>No bookings found</p>
             )}
-        </div>
+        </div></>
     );
 };
 

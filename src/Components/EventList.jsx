@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "./EventList.css";
+import NavBar from "./NavBar";
 
 const EventList = () => {
     const [events, setEvents] = useState([]);
@@ -23,7 +24,7 @@ const EventList = () => {
         try {
             const user = "elango@gmail.com";
             const bookingdate = new Date();
-            await axios.post("http://localhost:5000/bookings", { event: eventId, user, bookingdate });
+            await axios.post("http://localhost:5000/bookings", { event: eventId, user, bookingdate , ticketPricing });
             alert("Event added to booking!");
         } catch (err) {
             alert("Failed to add event to booking");
@@ -35,7 +36,9 @@ const EventList = () => {
     }
 
     return (
+      <>   <NavBar/>
         <div className="event-list">
+            
             <h1>Event List</h1>
             {events.length > 0 ? (
                 <ul>
@@ -58,7 +61,7 @@ const EventList = () => {
             ) : (
                 <p>No events available</p>
             )}
-        </div>
+        </div></>
     );
 };
 

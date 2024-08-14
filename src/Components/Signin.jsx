@@ -21,7 +21,7 @@ const Signin = () => {
 
       if (response.status === 200) {
         // Successful sign-in
-        navigate("/addevent"); // Redirect to the homepage or dashboard
+        navigate("/home"); // Redirect to the homepage or dashboard
       }
     } catch (err) {
       setError("Invalid email or password");
